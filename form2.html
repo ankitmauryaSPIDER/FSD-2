@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><form onsubmit="return checkPassword()">
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br><br>
+
+        <label for="confirm">Confirm Pass:</label>
+        <input type="password" id="confirm" name="confirm"><br><br>
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+    <script>
+        function checkPassword() {
+            let pass = document.getElementById("password").value;
+            let cpass = document.getElementById("confirm").value;
+
+            if (pass === "" || cpass === "") {
+                alert("Please fill all fields");
+                return false;
+            }
+
+            if (pass !== cpass) {
+                alert("Passwords do not match");
+                return false;
+            }
+
+            alert("Password matched successfully!");
+            return true;
+        }
+    </script>
+    
+</body>
+</html>
